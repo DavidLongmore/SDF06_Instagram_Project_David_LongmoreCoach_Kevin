@@ -1,0 +1,187 @@
+/* Base Styles */
+
+:root {
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #fafafa;
+    color: #262626;
+    padding-bottom: 3rem;
+}
+
+img {
+    display: block;
+}
+
+/* Here is all my styling for my profile grid using grid and flex box, the grid was used for the initial elements and the display:flex to wrap individual elements */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 150px 300px;
+    grid-template-rows: 30px 20px 20px;
+    gap: 10px;
+    margin: 10px;
+    /* Here I defined the grid columns which is 2 and 3 row ro place the content */
+}
+
+.profile-image img {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-image {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+
+    align-items: center;
+
+}
+
+.profile-user-settings {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+
+    /* Addded flex property within grid to ensure items are in a row */
+}
+
+.profile-stats {
+    grid-column-start: 2;
+    grid-row: 2;
+    margin-left: -40px;
+
+}
+
+.profile-stats ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.profile-bio {
+    grid-column-start: 2;
+    grid-row: 3;
+    /* Add styles specific to profile-bio */
+}
+
+
+/* here is all my styling for my instagram images grid */
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(4, 150px);
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    /* here i defined the grid for the gallery-item/images */
+}
+
+.gallery-item {
+    display: flex;
+    position: relative;
+    color: #fff;
+}
+
+.gallery-item:hover .gallery-item-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+    display: none;
+}
+
+.gallery-item-info li {
+    display: inline;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+.gallery-item-likes {
+    margin-right: 20px;
+}
+
+.visually-hidden {
+    display: none;
+    /* here I hid the gallery-items to ensure it only shows once hovered over */
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 15px;
+    /* Here i used position absolute to ensure it is over the div and used top and right to positionj the element in the right hand corner */
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Here i made sure the whole image fits in the full length and width of the size of the individual column */
+}
+
+/* Here is my additional styling for my buttons */
+.btn-profile-edit-btn {
+    font-weight: 700;
+    color: #262626;
+    background-color: #fafafa;
+    font-size: 10px;
+    border: 0.5px solid rgb(206, 197, 197);
+    margin-left: 20px;
+    margin-right: 10px;
+
+}
+
+.btn-profile-settings-btn {
+    background: #fafafa;
+    border: none;
+
+}
+
+.profile-real-name {
+    font-weight: 600;
+}
+
+.profile-stat-count {
+    font-weight: 600;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #999;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 500ms linear infinite;
+}
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
